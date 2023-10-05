@@ -1,0 +1,33 @@
+{
+  "identifier" : "DE048247",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "1DD91D99",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.BagCheck.PurchasePro.GoPro",
+      "referenceName" : "Purchase Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_billingIssuesEnabled" : true
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

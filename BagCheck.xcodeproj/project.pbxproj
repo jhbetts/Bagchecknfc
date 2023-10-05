@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C60AA5D2A89CACB00D6B070 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C60AA5C2A89CACB00D6B070 /* Preview Assets.xcassets */; };
+		7CB560352AB904D50080B25B /* BagCheck w: compare copy.swiftpm in Resources */ = {isa = PBXBuildFile; fileRef = 7CB560342AB904CC0080B25B /* BagCheck w: compare copy.swiftpm */; };
+		7CB5605C2AB90CAF0080B25B /* GameListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5603E2AB90CA40080B25B /* GameListRow.swift */; };
+		7CB5605D2AB90CAF0080B25B /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5603F2AB90CA40080B25B /* CompareView.swift */; };
+		7CB5605E2AB90CAF0080B25B /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560402AB90CA50080B25B /* RoundView.swift */; };
+		7CB560602AB90CAF0080B25B /* text. in Resources */ = {isa = PBXBuildFile; fileRef = 7CB560422AB90CA60080B25B /* text. */; };
+		7CB560612AB90CAF0080B25B /* GoProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560432AB90CA70080B25B /* GoProView.swift */; };
+		7CB560622AB90CAF0080B25B /* Get Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560442AB90CA70080B25B /* Get Location.swift */; };
+		7CB560632AB90CAF0080B25B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560452AB90CA80080B25B /* ContentView.swift */; };
+		7CB560642AB90CAF0080B25B /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560462AB90CA80080B25B /* GameDetailView.swift */; };
+		7CB560662AB90CAF0080B25B /* ClubEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560482AB90CA90080B25B /* ClubEditView.swift */; };
+		7CB560672AB90CAF0080B25B /* NewClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560492AB90CA90080B25B /* NewClubView.swift */; };
+		7CB560692AB90CAF0080B25B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5604B2AB90CA90080B25B /* SettingsView.swift */; };
+		7CB5606A2AB90CAF0080B25B /* NewShotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5604C2AB90CAA0080B25B /* NewShotModel.swift */; };
+		7CB5606C2AB90CAF0080B25B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5604E2AB90CAA0080B25B /* Persistence.swift */; };
+		7CB5606D2AB90CAF0080B25B /* Club CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5604F2AB90CAB0080B25B /* Club CoreData.swift */; };
+		7CB5606E2AB90CAF0080B25B /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560502AB90CAB0080B25B /* BlankView.swift */; };
+		7CB560702AB90CAF0080B25B /* ClubListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560522AB90CAC0080B25B /* ClubListRow.swift */; };
+		7CB560712AB90CAF0080B25B /* NFC .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560532AB90CAC0080B25B /* NFC .swift */; };
+		7CB560732AB90CAF0080B25B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB560552AB90CAD0080B25B /* Assets.xcassets */; };
+		7CB560742AB90CAF0080B25B /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560562AB90CAD0080B25B /* MyApp.swift */; };
+		7CB560752AB90CAF0080B25B /* StoreSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560572AB90CAE0080B25B /* StoreSetup.swift */; };
+		7CB560762AB90CAF0080B25B /* Storefront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560582AB90CAE0080B25B /* Storefront.swift */; };
+		7CB560772AB90CAF0080B25B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB560592AB90CAE0080B25B /* Store.swift */; };
+		7CB560782AB90CAF0080B25B /* ClubDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5605A2AB90CAE0080B25B /* ClubDetailView.swift */; };
+		7CB560792AB90CAF0080B25B /* ClubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5605B2AB90CAF0080B25B /* ClubListView.swift */; };
+		7CB560832AC4F5230080B25B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB560822AC4F5230080B25B /* StoreKit.framework */; };
+		7CD1D00E2AAD0F29005F5543 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7CD1D00D2AAD0F29005F5543 /* GoogleMobileAds */; };
+		7CD1D03B2AAE46DA005F5543 /* SwiftNFC in Frameworks */ = {isa = PBXBuildFile; productRef = 7CD1D03A2AAE46DA005F5543 /* SwiftNFC */; };
+		7CD1D03D2AAE4C9A005F5543 /* bannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1D03C2AAE4C9A005F5543 /* bannerAd.swift */; };
+		7CD1D0472AB393CA005F5543 /* bagcheckStore.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 7CD1D0462AB393C1005F5543 /* bagcheckStore.storekit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7C60AA522A89CAC700D6B070 /* BagCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BagCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C60AA5C2A89CACB00D6B070 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7C60AA632A89CCE300D6B070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7C66FDFD2ACBA78900CA4F10 /* BagCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BagCheck.entitlements; sourceTree = "<group>"; };
+		7CB560342AB904CC0080B25B /* BagCheck w: compare copy.swiftpm */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "BagCheck w: compare copy.swiftpm"; path = "../../Library/Mobile Documents/iCloud~com~apple~Playgrounds/Documents/BagCheck w: compare copy.swiftpm"; sourceTree = "<group>"; };
+		7CB5603E2AB90CA40080B25B /* GameListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListRow.swift; sourceTree = "<group>"; };
+		7CB5603F2AB90CA40080B25B /* CompareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
+		7CB560402AB90CA50080B25B /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		7CB560422AB90CA60080B25B /* text. */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = text.; path = "../../Library/Mobile Documents/iCloud~com~apple~Playgrounds/Documents/BagCheck w: compare copy.swiftpm/Resources/text."; sourceTree = "<group>"; };
+		7CB560432AB90CA70080B25B /* GoProView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoProView.swift; sourceTree = "<group>"; };
+		7CB560442AB90CA70080B25B /* Get Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Get Location.swift"; sourceTree = "<group>"; };
+		7CB560452AB90CA80080B25B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7CB560462AB90CA80080B25B /* GameDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
+		7CB560482AB90CA90080B25B /* ClubEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubEditView.swift; sourceTree = "<group>"; };
+		7CB560492AB90CA90080B25B /* NewClubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewClubView.swift; sourceTree = "<group>"; };
+		7CB5604B2AB90CA90080B25B /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7CB5604C2AB90CAA0080B25B /* NewShotModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewShotModel.swift; sourceTree = "<group>"; };
+		7CB5604E2AB90CAA0080B25B /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		7CB5604F2AB90CAB0080B25B /* Club CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Club CoreData.swift"; sourceTree = "<group>"; };
+		7CB560502AB90CAB0080B25B /* BlankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
+		7CB560522AB90CAC0080B25B /* ClubListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubListRow.swift; sourceTree = "<group>"; };
+		7CB560532AB90CAC0080B25B /* NFC .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NFC .swift"; sourceTree = "<group>"; };
+		7CB560552AB90CAD0080B25B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../Library/Mobile Documents/iCloud~com~apple~Playgrounds/Documents/BagCheck w: compare copy.swiftpm/View/Assets.xcassets"; sourceTree = "<group>"; };
+		7CB560562AB90CAD0080B25B /* MyApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyApp.swift; path = "../../Library/Mobile Documents/iCloud~com~apple~Playgrounds/Documents/BagCheck w: compare copy.swiftpm/MyApp.swift"; sourceTree = "<group>"; };
+		7CB560572AB90CAE0080B25B /* StoreSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSetup.swift; sourceTree = "<group>"; };
+		7CB560582AB90CAE0080B25B /* Storefront.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storefront.swift; sourceTree = "<group>"; };
+		7CB560592AB90CAE0080B25B /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		7CB5605A2AB90CAE0080B25B /* ClubDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubDetailView.swift; sourceTree = "<group>"; };
+		7CB5605B2AB90CAF0080B25B /* ClubListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubListView.swift; sourceTree = "<group>"; };
+		7CB560822AC4F5230080B25B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7CD1D03C2AAE4C9A005F5543 /* bannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerAd.swift; sourceTree = "<group>"; };
+		7CD1D0462AB393C1005F5543 /* bagcheckStore.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = bagcheckStore.storekit; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C60AA4F2A89CAC700D6B070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB560832AC4F5230080B25B /* StoreKit.framework in Frameworks */,
+				7CD1D03B2AAE46DA005F5543 /* SwiftNFC in Frameworks */,
+				7CD1D00E2AAD0F29005F5543 /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C60AA492A89CAC700D6B070 = {
+			isa = PBXGroup;
+			children = (
+				7CB560422AB90CA60080B25B /* text. */,
+				7CD1D0462AB393C1005F5543 /* bagcheckStore.storekit */,
+				7CD1D03C2AAE4C9A005F5543 /* bannerAd.swift */,
+				7CB560562AB90CAD0080B25B /* MyApp.swift */,
+				7CB560342AB904CC0080B25B /* BagCheck w: compare copy.swiftpm */,
+				7CB560552AB90CAD0080B25B /* Assets.xcassets */,
+				7CB5607E2AC4CCDA0080B25B /* Background */,
+				7C60AA542A89CAC700D6B070 /* BagCheck */,
+				7CB560812AC4F5230080B25B /* Frameworks */,
+				7CB5607A2AC4CC490080B25B /* Main Views */,
+				7C60AA532A89CAC700D6B070 /* Products */,
+				7CB5607D2AC4CCBE0080B25B /* Store */,
+				7CB560802AC4CD130080B25B /* Subviews */,
+				7CB5607B2AC4CC7D0080B25B /* Views */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+		7C60AA532A89CAC700D6B070 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C60AA522A89CAC700D6B070 /* BagCheck.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C60AA542A89CAC700D6B070 /* BagCheck */ = {
+			isa = PBXGroup;
+			children = (
+				7C66FDFD2ACBA78900CA4F10 /* BagCheck.entitlements */,
+				7C60AA632A89CCE300D6B070 /* Info.plist */,
+				7C60AA5B2A89CACB00D6B070 /* Preview Content */,
+			);
+			path = BagCheck;
+			sourceTree = "<group>";
+		};
+		7C60AA5B2A89CACB00D6B070 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7C60AA5C2A89CACB00D6B070 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7CB5607A2AC4CC490080B25B /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CB5605B2AB90CAF0080B25B /* ClubListView.swift */,
+				7CB560402AB90CA50080B25B /* RoundView.swift */,
+				7CB560452AB90CA80080B25B /* ContentView.swift */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		7CB5607B2AC4CC7D0080B25B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CB5605A2AB90CAE0080B25B /* ClubDetailView.swift */,
+				7CB560462AB90CA80080B25B /* GameDetailView.swift */,
+				7CB560502AB90CAB0080B25B /* BlankView.swift */,
+				7CB560482AB90CA90080B25B /* ClubEditView.swift */,
+				7CB560432AB90CA70080B25B /* GoProView.swift */,
+				7CB560492AB90CA90080B25B /* NewClubView.swift */,
+				7CB5604B2AB90CA90080B25B /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7CB5607D2AC4CCBE0080B25B /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				7CB560592AB90CAE0080B25B /* Store.swift */,
+				7CB560582AB90CAE0080B25B /* Storefront.swift */,
+				7CB560572AB90CAE0080B25B /* StoreSetup.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		7CB5607E2AC4CCDA0080B25B /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				7CB5604F2AB90CAB0080B25B /* Club CoreData.swift */,
+				7CB560442AB90CA70080B25B /* Get Location.swift */,
+				7CB5604C2AB90CAA0080B25B /* NewShotModel.swift */,
+				7CB560532AB90CAC0080B25B /* NFC .swift */,
+				7CB5604E2AB90CAA0080B25B /* Persistence.swift */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
+		7CB560802AC4CD130080B25B /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				7CB560522AB90CAC0080B25B /* ClubListRow.swift */,
+				7CB5603F2AB90CA40080B25B /* CompareView.swift */,
+				7CB5603E2AB90CA40080B25B /* GameListRow.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		7CB560812AC4F5230080B25B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CB560822AC4F5230080B25B /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7C60AA512A89CAC700D6B070 /* BagCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C60AA602A89CACB00D6B070 /* Build configuration list for PBXNativeTarget "BagCheck" */;
+			buildPhases = (
+				7C60AA4E2A89CAC700D6B070 /* Sources */,
+				7C60AA4F2A89CAC700D6B070 /* Frameworks */,
+				7C60AA502A89CAC700D6B070 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BagCheck;
+			packageProductDependencies = (
+				7CD1D00D2AAD0F29005F5543 /* GoogleMobileAds */,
+				7CD1D03A2AAE46DA005F5543 /* SwiftNFC */,
+			);
+			productName = BagCheck;
+			productReference = 7C60AA522A89CAC700D6B070 /* BagCheck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C60AA4A2A89CAC700D6B070 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					7C60AA512A89CAC700D6B070 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 7C60AA4D2A89CAC700D6B070 /* Build configuration list for PBXProject "BagCheck" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7C60AA492A89CAC700D6B070;
+			packageReferences = (
+				7CD1D00C2AAD0F29005F5543 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				7CD1D0392AAE46DA005F5543 /* XCRemoteSwiftPackageReference "SwiftNFC" */,
+			);
+			productRefGroup = 7C60AA532A89CAC700D6B070 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C60AA512A89CAC700D6B070 /* BagCheck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7C60AA502A89CAC700D6B070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB560602AB90CAF0080B25B /* text. in Resources */,
+				7C60AA5D2A89CACB00D6B070 /* Preview Assets.xcassets in Resources */,
+				7CD1D0472AB393CA005F5543 /* bagcheckStore.storekit in Resources */,
+				7CB560352AB904D50080B25B /* BagCheck w: compare copy.swiftpm in Resources */,
+				7CB560732AB90CAF0080B25B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7C60AA4E2A89CAC700D6B070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB560772AB90CAF0080B25B /* Store.swift in Sources */,
+				7CB5605C2AB90CAF0080B25B /* GameListRow.swift in Sources */,
+				7CB5606E2AB90CAF0080B25B /* BlankView.swift in Sources */,
+				7CB560752AB90CAF0080B25B /* StoreSetup.swift in Sources */,
+				7CB560792AB90CAF0080B25B /* ClubListView.swift in Sources */,
+				7CB560612AB90CAF0080B25B /* GoProView.swift in Sources */,
+				7CB560632AB90CAF0080B25B /* ContentView.swift in Sources */,
+				7CB560672AB90CAF0080B25B /* NewClubView.swift in Sources */,
+				7CB560742AB90CAF0080B25B /* MyApp.swift in Sources */,
+				7CB560622AB90CAF0080B25B /* Get Location.swift in Sources */,
+				7CB560702AB90CAF0080B25B /* ClubListRow.swift in Sources */,
+				7CB5605E2AB90CAF0080B25B /* RoundView.swift in Sources */,
+				7CD1D03D2AAE4C9A005F5543 /* bannerAd.swift in Sources */,
+				7CB5606C2AB90CAF0080B25B /* Persistence.swift in Sources */,
+				7CB560782AB90CAF0080B25B /* ClubDetailView.swift in Sources */,
+				7CB5605D2AB90CAF0080B25B /* CompareView.swift in Sources */,
+				7CB560642AB90CAF0080B25B /* GameDetailView.swift in Sources */,
+				7CB560712AB90CAF0080B25B /* NFC .swift in Sources */,
+				7CB560662AB90CAF0080B25B /* ClubEditView.swift in Sources */,
+				7CB5606A2AB90CAF0080B25B /* NewShotModel.swift in Sources */,
+				7CB560762AB90CAF0080B25B /* Storefront.swift in Sources */,
+				7CB560692AB90CAF0080B25B /* SettingsView.swift in Sources */,
+				7CB5606D2AB90CAF0080B25B /* Club CoreData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7C60AA5E2A89CACB00D6B070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Access to NFC is required to use NFC tags.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7C60AA5F2A89CACB00D6B070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Access to NFC is required to use NFC tags.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7C60AA612A89CACB00D6B070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BagCheck/BagCheck.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BagCheck/Preview Content\"";
+				DEVELOPMENT_TEAM = KQ78QAPWWB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BagCheck/Info.plist;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "This app uses NFC to identify clubs when tracking shot distances. ";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location to track shot distances.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to track shot distances.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This app needs your location to track shot distances.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to track shot distances.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = app.BagCheck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7C60AA622A89CACB00D6B070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BagCheck/BagCheck.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BagCheck/Preview Content\"";
+				DEVELOPMENT_TEAM = KQ78QAPWWB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BagCheck/Info.plist;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "This app uses NFC to identify clubs when tracking shot distances. ";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location to track shot distances.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to track shot distances.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This app needs your location to track shot distances.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to track shot distances.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = app.BagCheck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7C60AA4D2A89CAC700D6B070 /* Build configuration list for PBXProject "BagCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C60AA5E2A89CACB00D6B070 /* Debug */,
+				7C60AA5F2A89CACB00D6B070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C60AA602A89CACB00D6B070 /* Build configuration list for PBXNativeTarget "BagCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C60AA612A89CACB00D6B070 /* Debug */,
+				7C60AA622A89CACB00D6B070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7CD1D00C2AAD0F29005F5543 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		7CD1D0392AAE46DA005F5543 /* XCRemoteSwiftPackageReference "SwiftNFC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/1998code/SwiftNFC.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7CD1D00D2AAD0F29005F5543 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CD1D00C2AAD0F29005F5543 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+		7CD1D03A2AAE46DA005F5543 /* SwiftNFC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CD1D0392AAE46DA005F5543 /* XCRemoteSwiftPackageReference "SwiftNFC" */;
+			productName = SwiftNFC;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7C60AA4A2A89CAC700D6B070 /* Project object */;
+}
