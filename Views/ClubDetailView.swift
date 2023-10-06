@@ -63,8 +63,9 @@ struct ClubDetailView: View {
                         }
                     }
                 }.scrollIndicators(.hidden)
-                Spacer()
                 
+                Spacer()
+
                 if !locationManager.waiting && !club.putter {
                     Button(action: {locationManager.currentLocation(mode: .shot)
                         //waiting = true
@@ -82,7 +83,6 @@ struct ClubDetailView: View {
                         Button("OK", role: .cancel) {}
                     }
                 }
-                
                 if locationManager.waiting && !club.putter {
                     Button(action: {locationManager.currentLocation(mode: .ball)
                         ballClub = club
@@ -95,7 +95,6 @@ struct ClubDetailView: View {
                     })
                     .buttonStyle(.borderedProminent)
                 }
-                
                 if locationManager.waiting && club.putter {
                     Button(action: {locationManager.currentLocation(mode: .ball)
                         ballClub = club
@@ -103,7 +102,6 @@ struct ClubDetailView: View {
                             puttCounter += 1
                             counter += 1
                         }
-                        
                         club.strokesList.append(0)
                         if ballClub.putter {
                             locationManager.waiting = false
@@ -125,7 +123,6 @@ struct ClubDetailView: View {
                             counter += 1
                             puttCounter += 1
                         } 
-                        
                         club.strokesList.append(0)                        
                     }, label: {
                         Text("Record Putts")
@@ -137,7 +134,6 @@ struct ClubDetailView: View {
                     })
                     .buttonStyle(.borderedProminent)
                 }
-                
             }
             .navigationTitle(club.name)
             
@@ -150,7 +146,6 @@ struct ClubDetailView: View {
                                     Text(club.name)
                                         .tag(Optional(club))
                                 }
-                                
                             }
                         } label: {
                             Text("Compare")
@@ -242,27 +237,6 @@ struct ClubCompareChartView: View {
         }.chartYScale(domain: yMinValue - 10...yMaxValue + 10)
     }
 }
-
-
-//struct ClubCompareChartView: View {
-//    var club: Club
-//    var compareClub: Club?
-//    var body: some View {
-//        Chart(0..<(club.strokesList.count), id: \.self) { nr in
-//            PointMark(
-//                x: .value("X value", nr),
-//                y: .value("Y value", club.strokesList[nr])
-//            )
-//            
-//            if compareClub != nil{
-//                PointMark(
-//                    x: .value("X value", nr),
-//                    y: .value("Y value", compareClub!.strokesList[nr])
-//                ).foregroundStyle(.blue)
-//            }
-//        }    
-//    }
-//}
 
 struct ClubDetailBody: View {
     let club: Club
