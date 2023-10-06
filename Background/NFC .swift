@@ -38,6 +38,7 @@ public class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate
 
 
             session.alertMessage = self.endAlert != "" ? self.endAlert : "Club Scanned!"
+            session.invalidate()
         }
     }
     
@@ -47,6 +48,7 @@ public class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate
     public func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
         print("Session did invalidate with error: \(error)")
         self.session = nil
+        session.invalidate()
     }
 }
 
