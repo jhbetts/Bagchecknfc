@@ -7,20 +7,15 @@ class LocationManagerModel : NSObject, ObservableObject, NFCNDEFReaderSessionDel
     
     enum LocationMode {
         case ball, shot, putt 
-        //addNewShot(distance: Double, shotClub: Club)
     }
     
-    //@Environment(\.managedObjectContext) private var viewContext
-    //@ObservedObject var club: Club
     @Published var shotCoord : CLLocation?
     @Published var ballCoord : CLLocation?
-    //@Published var clubContext: NSManagedObjectContext?
     @Published var waiting = false
     @Published var errorMessage = ""
     @Published var showError = false
     @Published var distanceYards: Int?
     @Published var distanceChange = false
-    //@Published var shotClub: Club
     private let locationManager = CLLocationManager()
     private var mode : LocationMode = .ball
     private var nfcSession: NFCReaderSession?
@@ -34,26 +29,6 @@ class LocationManagerModel : NSObject, ObservableObject, NFCNDEFReaderSessionDel
         
     }
     
-    func startNFCReader() {
-        nfcSession = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
-        nfcSession?.begin()
-    }
-    
-    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        if let readerError = error as? NFCReaderError {
-            print("NFC Reader Error: \(readerError.localizedDescription)")
-        }
-    }
-    
-    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        guard let tag = messages.first?.records.first, tag.typeNameFormat == .nfcWellKnown, let payloadType = String(data: tag.type, encoding: .utf8), payloadType == "T", let clubID = String(data: tag.payload, encoding: .utf8) else {
-            session.invalidate(errorMessage: "Invalid NFC Tag")
-            return
-        }
-        DispatchQueue.main.async {
-            self.scannedClubID = clubID
-        }
-    }
     
     public func currentLocation(mode: LocationMode) {
         self.mode = mode
