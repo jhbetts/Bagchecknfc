@@ -16,7 +16,6 @@ struct ClubDetailView: View {
     @State var compareClub: Club?
     @State var newShot: Int = 0
     @State private var showEdit: Bool = false
-    @Binding var waiting: Bool
     @Binding var shotCoord: CLLocation?
     @Binding var ballCoord: CLLocation?
     @Binding var shotClub: Club
@@ -31,13 +30,13 @@ struct ClubDetailView: View {
 
     var body: some View{
         ZStack {
-            if waiting && club == shotClub{
+            if locationManager.waiting && club == shotClub{
                 HStack{
                     Spacer()
                     VStack{
                         Spacer()
                         Button(action: {
-                            waiting = false
+                            locationManager.waiting = false
                         }, label: {
                             CancelTrackingButton()
                                 .frame(width: 50, height: 50, alignment: .center)
@@ -69,7 +68,7 @@ struct ClubDetailView: View {
                 }.scrollIndicators(.hidden)
                 Spacer()
                 
-                if waiting == false && club.putter == false {
+                if !locationManager.waiting && !club.putter {
                     Button(action: {locationManager.currentLocation(mode: .shot)
                         //waiting = true
                         shotClub = club
@@ -87,7 +86,7 @@ struct ClubDetailView: View {
                     }
                 }
                 
-                if waiting && club.putter == false{
+                if locationManager.waiting && !club.putter {
                     Button(action: {locationManager.currentLocation(mode: .ball)
                         ballClub = club
                     }, label: {
@@ -100,7 +99,7 @@ struct ClubDetailView: View {
                     .buttonStyle(.borderedProminent)
                 }
                 
-                if waiting && club.putter == true{
+                if locationManager.waiting && club.putter {
                     Button(action: {locationManager.currentLocation(mode: .ball)
                         ballClub = club
                         if roundStarted {
@@ -109,8 +108,8 @@ struct ClubDetailView: View {
                         }
                         
                         club.strokesList.append(0)
-                        if ballClub.putter == true {
-                            waiting = false
+                        if ballClub.putter {
+                            locationManager.waiting = false
                         }
                     }, label: {
                         Text("Start Putting")
@@ -123,7 +122,7 @@ struct ClubDetailView: View {
                     })
                     .buttonStyle(.borderedProminent)
                 }
-                if waiting == false && club.putter == true{
+                if !locationManager.waiting && club.putter {
                     Button(action: {
                         if roundStarted{
                             counter += 1
@@ -167,7 +166,7 @@ struct ClubDetailView: View {
                     } //: ToolbarItem 
                 }
                 .toolbar{
-                    if locationManager.waiting == true {
+                    if locationManager.waiting {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button("Holed Out!") {
                                 locationManager.currentLocation(mode: .ball)
