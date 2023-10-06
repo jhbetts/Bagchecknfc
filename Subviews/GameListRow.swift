@@ -2,7 +2,6 @@ import SwiftUI
 
 struct GameListRow: View {
     @ObservedObject var game: Game
-    @EnvironmentObject var storefront: Storefront
     @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
