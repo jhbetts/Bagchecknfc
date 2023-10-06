@@ -16,11 +16,8 @@ struct ClubDetailView: View {
     @State var compareClub: Club?
     @State var newShot: Int = 0
     @State private var showEdit: Bool = false
-    @Binding var shotCoord: CLLocation?
-    @Binding var ballCoord: CLLocation?
     @Binding var shotClub: Club
     @Binding var ballClub: Club
-    @Binding var distanceYards: Int?
     @Binding var counter: Int
     @Binding var puttCounter: Int
     @Binding var roundStarted: Bool
