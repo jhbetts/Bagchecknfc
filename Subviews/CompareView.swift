@@ -20,16 +20,6 @@ struct CompareButton: View {
             }
             }).pickerStyle(.menu)
         }
-        
-        
-//        Picker("Compare Clubs", selection: $compareClub, label: Text("Compare")) {
-//            ForEach(clubs) {club in
-//                Text(club.name)
-//                    .tag(Optional(club))
-//            }
-//        }
-//        .pickerStyle(.menu)
-        
     }
 }
 
