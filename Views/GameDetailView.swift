@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct GameDetailView: View {
-    @EnvironmentObject var storefront: Storefront
     @ObservedObject var game: Game
     @Environment(\.managedObjectContext) private var viewContext
     
