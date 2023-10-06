@@ -1,43 +1,4 @@
-//import SwiftUI
-//import CoreNFC
-//
-//
-//class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
-//    private var nfcSession: NFCNDEFReaderSession?
-//    @Published var scannedClubID: String = ""
-//    @Published var isNFCReaderActive: Bool = false
-//
-//    func startNFCReader() {
-//        nfcSession = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
-//        nfcSession?.begin()
-//        isNFCReaderActive = true
-//    }
-//
-//    // MARK: - NFCNDEFReaderSessionDelegate
-//
-//    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-//        isNFCReaderActive = false
-//        if let readerError = error as? NFCReaderError {
-//            // Handle NFC reader error
-//            print("NFC Reader Error: \(readerError.localizedDescription)")
-//        }
-//    }
-//    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-//        guard let tag = messages.first?.records.first,
-//              tag.typeNameFormat == .nfcWellKnown,
-//              let payloadType = String(data: tag.type, encoding: .utf8), payloadType == "T", // Check for Well Known Text (WKT) payload type
-//              let clubID = String(data: tag.payload, encoding: .utf8) else {
-//            // Handle error or invalid tag data
-//            session.invalidate(errorMessage: "Invalid NFC Tag")
-//            return
-//        }
-//
-//        DispatchQueue.main.async {
-//            self.scannedClubID = clubID
-//        }
-//    }
-//
-//}
+
 import SwiftUI
 import CoreNFC
 
