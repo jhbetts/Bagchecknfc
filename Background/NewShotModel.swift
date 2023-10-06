@@ -4,13 +4,10 @@ import CoreLocation
 
 
 class NewShotModel: ObservableObject {
-    //@Environment(\.managedObjectContext) private var viewContext
-    //let viewContext: NSManagedObjectContext
-    //@EnvironmentObject var locationManager: LocationManagerModel
+    
     private let locationManager: LocationManagerModel
     @Binding var counter: Int
     @Binding var roundStarted: Bool
-    //@Binding var viewContext: NSManagedObjectContext
     init(locationManager: LocationManagerModel, counter: Binding<Int>, roundStarted: Binding<Bool>) {
         self.locationManager = locationManager
         self._counter = counter
