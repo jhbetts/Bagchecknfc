@@ -2,7 +2,7 @@ import SwiftUI
 import CoreLocation
 import CoreData
 import Combine
-import CoreNFC
+//import CoreNFC
 
 struct ContentView: View {
     @EnvironmentObject var storefront: Storefront
