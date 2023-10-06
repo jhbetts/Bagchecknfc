@@ -52,7 +52,7 @@ struct ClubListView: View {
                 .shadow(color: Color.black.opacity(0.3), radius: 3, x: -2, y: 0)
                 List { 
                     ForEach(clubs.sorted{$0.averageYardage > $1.averageYardage}) {club in 
-                        NavigationLink(destination: ClubDetailView(club: club,  waiting: $locationManager.waiting, shotCoord: $locationManager.shotCoord, ballCoord: $locationManager.ballCoord,  shotClub: $shotClub, ballClub: $ballClub, distanceYards: $locationManager.distanceYards, counter: $counter, puttCounter: $puttCounter, roundStarted: $roundStarted, showError: $locationManager.showError)
+                        NavigationLink(destination: ClubDetailView(club: club, shotCoord: $locationManager.shotCoord, ballCoord: $locationManager.ballCoord,  shotClub: $shotClub, ballClub: $ballClub, distanceYards: $locationManager.distanceYards, counter: $counter, puttCounter: $puttCounter, roundStarted: $roundStarted, showError: $locationManager.showError)
                             , label:{
                                 ClubListRow(club: club, shotClub: $shotClub).environmentObject(locationManager)
                             } )
@@ -61,7 +61,7 @@ struct ClubListView: View {
                 } //: List
                 .scrollIndicators(.hidden)
                 
-                if clubs.count == 0 && self.showNewClub == false{
+                if clubs.count == 0 && !self.showNewClub {
                     //locationManager.waiting = false
                     Button("Tap to Start Adding Clubs!") {
                         self.showNewClub = true
