@@ -240,6 +240,7 @@ struct ClubCompareChartView: View {
 
 struct ClubDetailBody: View {
     let club: Club
+    //consider making club and compareclub @State vars
     let compareClub: Club?
     var body: some View {
         Section {
