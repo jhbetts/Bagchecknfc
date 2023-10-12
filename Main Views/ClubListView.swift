@@ -117,27 +117,33 @@ struct ClubListView: View {
             }
         }.onChange(of: NFCR.msg) {newValue in
             print("test")
-            if !locationManager.waiting && !shotClub.putter{
+            if !locationManager.waiting && !scannedClub.putter{
                 locationManager.currentLocation(mode: .shot)
-                shotClub.name = NFCR.msg
-            } else if locationManager.waiting && shotClub.putter {
+                shotClub = scannedClub
+            } 
+            if locationManager.waiting && !scannedClub.putter {
+                    Button(action: {locationManager.currentLocation(mode: .ball)
+                        ballClub = scannedClub
+            }                      
+            if locationManager.waiting && scannedClub.putter {
                 locationManager.currentLocation(mode: .ball)
-                    ballClub = shotClub
+                    ballClub = scannedClub
                     if roundStarted {
                         puttCounter += 1
                         counter += 1
                     }
                     
-                    shotClub.strokesList.append(0)
+                    ballClub.strokesList.append(0)
                     if ballClub.putter == true {
                         locationManager.waiting = false
                     }
-            } else if !locationManager.waiting && shotClub.putter {
+            } 
+            if !locationManager.waiting && scannedClub.putter {
                 if roundStarted{
                     counter += 1
                     puttCounter += 1
                 }
-                shotClub.strokesList.append(0)
+                scannedClub.strokesList.append(0)
             }
 
         }
