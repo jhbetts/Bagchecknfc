@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreData
+import StoreKit
 
 struct SettingsView: View {
     @EnvironmentObject var storefront: Storefront
@@ -62,7 +63,9 @@ struct SettingsView: View {
             
             
             Button(action: {
-                print("restore purchases")
+                Task {
+                    try? await AppStore.sync()
+                }
             }, label: {
                 SettingsButtons(buttonString: "Restore Past Purchases")
             }).buttonStyle(.bordered)

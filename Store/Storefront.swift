@@ -41,4 +41,5 @@ public class Storefront: ObservableObject {
         isPro = ids.contains(goProId)
     }
     
+    
 }
