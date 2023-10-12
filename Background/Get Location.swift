@@ -3,7 +3,7 @@ import CoreLocation
 import CoreNFC
 
 
-class LocationManagerModel : NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
+class LocationManagerModel : NSObject, ObservableObject {
     
     enum LocationMode {
         case ball, shot, putt 

@@ -54,3 +54,4 @@ extension Club: Identifiable {
 enum Yards: Int {
     case normal = 0
 }
+

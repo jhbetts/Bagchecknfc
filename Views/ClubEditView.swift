@@ -4,8 +4,8 @@ struct ClubEditView: View {
     @EnvironmentObject var storefront: Storefront
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var club: Club
-    @ObservedObject var NFCW = NFCWriter()
-    @ObservedObject var NFCR = NFCReader()
+    @StateObject var NFCW = NFCWriter()
+    @StateObject var NFCR = NFCReader()
     //@State var isEditing: Bool = false
 //    @State private var nfcTag = ""
 //    @State private var scannedNfcTag: String = ""

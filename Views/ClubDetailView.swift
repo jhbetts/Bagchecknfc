@@ -172,7 +172,7 @@ struct ClubDetailView: View {
                     ClubEditView(club: club, showEdit: self.$showEdit, isPutter: $club.putter).accentColor(Color.green)
                         //.environmentObject(storefront)
                 }
-        }
+        }.id(club.strokesList)
         
     }
     private func deleteStroke(at offsets: IndexSet) {
@@ -249,9 +249,11 @@ struct ClubDetailBody: View {
             Text("\(club.strokesList.count) Strokes Counted")
             Text("Distance Standard Deviation: \(lround(club.strokesStandardDeviation))y")
         }
-        ClubCompareChartView(club: club, compareClub: compareClub)
-            .animation(.easeInOut, value: compareClub)
-        
-            .listRowBackground(Color.clear)
+        if club.strokesList.count != 0{
+            ClubCompareChartView(club: club, compareClub: compareClub)
+                .animation(.easeInOut, value: compareClub)
+            
+                .listRowBackground(Color.clear)
+        }
     }
 }

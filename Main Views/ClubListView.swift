@@ -10,10 +10,11 @@ struct ClubListView: View {
         entity: Club.entity(),
         sortDescriptors:[])
     private var clubs:FetchedResults<Club>
-    @ObservedObject var NFCR = NFCReader()
-    @ObservedObject var NFCW = NFCWriter()
+    @StateObject var NFCR = NFCReader()
+    @StateObject var NFCW = NFCWriter()
     @State private var shotClub = Club()
     @State private var ballClub = Club()
+    @State private var scannedClub = Club()
     @State private var showNewClub: Bool = false
     @State private var showSettings: Bool = false
     @State var premium = false
@@ -35,6 +36,8 @@ struct ClubListView: View {
                         Spacer()
                         if premium {
                             Button(action: {
+                                //NFCR.msg = "msg"
+                                print(NFCR.msg)
                                 read()
                                 ////READ NFC TAG
                             }, label: {
@@ -89,7 +92,7 @@ struct ClubListView: View {
                     } //: Button
                 } //: ToolbarItem
             } //: .toolbar
-        }//.id(refreshClubs)
+        }.id(NFCR.msg)
         .onChange(of: locationManager.distanceChange, perform: {
             value in
             if locationManager.distanceYards != nil{
@@ -115,36 +118,54 @@ struct ClubListView: View {
                 premium = false
                 print("isPurchased failed")
             }
-        }.onChange(of: NFCR.msg) {newValue in
+        }.onChange(of: NFCR.clubScanned, perform: {newValue in
             print("test")
-            if !locationManager.waiting && !shotClub.putter{
+            scannedClub = findClub(withName: NFCR.msg)
+            if !locationManager.waiting && !scannedClub.putter{
                 locationManager.currentLocation(mode: .shot)
-                shotClub.name = NFCR.msg
-            } else if locationManager.waiting && shotClub.putter {
+                shotClub = scannedClub
+            } 
+            if locationManager.waiting && !scannedClub.putter {
                 locationManager.currentLocation(mode: .ball)
-                    ballClub = shotClub
+                ballClub = scannedClub
+            }
+            if locationManager.waiting && scannedClub.putter {
+                locationManager.currentLocation(mode: .ball)
+                    ballClub = scannedClub
                     if roundStarted {
                         puttCounter += 1
                         counter += 1
                     }
                     
-                    shotClub.strokesList.append(0)
+                    ballClub.strokesList.append(0)
                     if ballClub.putter == true {
                         locationManager.waiting = false
                     }
-            } else if !locationManager.waiting && shotClub.putter {
+            } 
+            if !locationManager.waiting && scannedClub.putter {
                 if roundStarted{
                     counter += 1
                     puttCounter += 1
                 }
-                shotClub.strokesList.append(0)
+                scannedClub.strokesList.append(0)
             }
-
-        }
+        })
     }
     func read() {
         NFCR.read()
+        //print(NFCR.msg)
     }
+    
+    func findClub(withName name: String) -> Club {
+        for club in clubs {
+            if club.name == name {
+                return club
+            }
+        }
+        return Club()
+    }
+
+    
     
     private func deleteClub(index: IndexSet) -> Void {
         withAnimation {

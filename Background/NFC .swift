@@ -7,8 +7,9 @@ public class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate
     
     public var startAlert = "Hold your iPhone near the tag."
     public var endAlert = ""
-    public var msg = "Scan to read or Edit here to write..."
+    var msg = "Scan to read or Edit here to write..."
     public var raw = "Raw Data available after scan."
+    @Published var clubScanned = UUID()
 
     public var session: NFCNDEFReaderSession?
     
@@ -35,6 +36,8 @@ public class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate
                     "\($0.typeNameFormat) \(String(decoding:$0.type, as: UTF8.self)) \(String(decoding:$0.identifier, as: UTF8.self)) \(String(decoding: $0.payload, as: UTF8.self))"
                 }.joined(separator: "\n")
             }.joined(separator: " ")
+            print(self.msg)
+            self.clubScanned = UUID()
 
 
             session.alertMessage = self.endAlert != "" ? self.endAlert : "Club Scanned!"
@@ -69,6 +72,7 @@ public class NFCWriter: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate
         session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
         session?.alertMessage = self.startAlert
         session?.begin()
+        print("scanning")
     }
     
     public func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
