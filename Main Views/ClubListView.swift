@@ -17,7 +17,8 @@ struct ClubListView: View {
     @State private var scannedClub = Club()
     @State private var showNewClub: Bool = false
     @State private var showSettings: Bool = false
-    @State var premium = false
+    @State var showAlert = false
+    @Binding var premium: Bool
     @Binding var refreshGames: UUID
     @Binding var refreshClubs: UUID 
     @Binding var counter: Int
@@ -34,7 +35,7 @@ struct ClubListView: View {
                     Spacer()
                     VStack{
                         Spacer()
-                        if premium {
+                        if premium == true {
                             Button(action: {
                                 //NFCR.msg = "msg"
                                 print(NFCR.msg)
@@ -107,7 +108,7 @@ struct ClubListView: View {
             NewClubView(isShow: $showNewClub).accentColor(Color.green)
         }
         .sheet(isPresented: $showSettings) {
-            SettingsView(refreshClubs: $refreshClubs, refreshGames: $refreshGames)
+            SettingsView(premium: $premium, refreshClubs: $refreshClubs, refreshGames: $refreshGames)
                 .accentColor(Color.green)
         }.task {
             do {
@@ -120,49 +121,63 @@ struct ClubListView: View {
             }
         }.onChange(of: NFCR.clubScanned, perform: {newValue in
             print("test")
-            scannedClub = findClub(withName: NFCR.msg)
-            if !locationManager.waiting && !scannedClub.putter{
-                locationManager.currentLocation(mode: .shot)
-                shotClub = scannedClub
-            } 
-            if locationManager.waiting && !scannedClub.putter {
-                locationManager.currentLocation(mode: .ball)
-                ballClub = scannedClub
-            }
-            if locationManager.waiting && scannedClub.putter {
-                locationManager.currentLocation(mode: .ball)
-                    ballClub = scannedClub
-                    if roundStarted {
-                        puttCounter += 1
-                        counter += 1
-                    }
-                    
-                    ballClub.strokesList.append(0)
-                    if ballClub.putter == true {
-                        locationManager.waiting = false
-                    }
-            } 
-            if !locationManager.waiting && scannedClub.putter {
-                if roundStarted{
-                    counter += 1
-                    puttCounter += 1
+            scannedClub = findClub(withName: NFCR.msg)!
+            if scannedClub == scannedClub {
+                if !locationManager.waiting && !scannedClub.putter{
+                    locationManager.currentLocation(mode: .shot)
+                    shotClub = scannedClub
                 }
-                scannedClub.strokesList.append(0)
+                if locationManager.waiting && !scannedClub.putter {
+                    locationManager.currentLocation(mode: .ball)
+                    ballClub = scannedClub
+                }
+                if locationManager.waiting && scannedClub.putter {
+                    locationManager.currentLocation(mode: .ball)
+                        ballClub = scannedClub
+                        if roundStarted {
+                            puttCounter += 1
+                            counter += 1
+                        }
+                        
+                        ballClub.strokesList.append(0)
+                        if ballClub.putter == true {
+                            locationManager.waiting = false
+                        }
+                }
+                if !locationManager.waiting && scannedClub.putter {
+                    if roundStarted{
+                        counter += 1
+                        puttCounter += 1
+                    }
+                    scannedClub.strokesList.append(0)
+                }
+            } else {
+                showAlert = true
             }
+            
         })
+        .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text("This tag has not been paired with a club"),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
     }
     func read() {
         NFCR.read()
         //print(NFCR.msg)
     }
     
-    func findClub(withName name: String) -> Club {
+    func findClub(withName name: String) -> Club? {
         for club in clubs {
             if club.name == name {
                 return club
             }
         }
-        return Club()
+        
+        return nil
+        
     }
 
     

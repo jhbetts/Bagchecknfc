@@ -13,7 +13,7 @@ struct SettingsView: View {
     @State var clubsDeleteAlert = false
     @State var roundDeleteAlert = false
     @State var showGoPro = false
-    @State var premium = false
+    @Binding var premium: Bool
     @Binding var refreshClubs: UUID
     @Binding var refreshGames: UUID
     

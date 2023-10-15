@@ -27,7 +27,7 @@ struct ContentView: View {
             }
             
             TabView{
-                ClubListView(refreshGames: $refreshGames, refreshClubs: $refreshClubs, counter: $counter, puttCounter: $puttCounter, roundStarted: $roundStarted)
+                ClubListView(premium: $premium, refreshGames: $refreshGames, refreshClubs: $refreshClubs, counter: $counter, puttCounter: $puttCounter, roundStarted: $roundStarted)
                     .tabItem {
                         Image(systemName: "list.bullet.rectangle.portrait")
                     }
