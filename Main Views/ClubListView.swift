@@ -121,8 +121,9 @@ struct ClubListView: View {
             }
         }.onChange(of: NFCR.clubScanned, perform: {newValue in
             print("test")
-            scannedClub = findClub(withName: NFCR.msg)!
-            if scannedClub == scannedClub {
+            let foundClub = findClub(withName: NFCR.msg) ?? nil
+            if foundClub != nil{
+                scannedClub = foundClub!
                 if !locationManager.waiting && !scannedClub.putter{
                     locationManager.currentLocation(mode: .shot)
                     shotClub = scannedClub
@@ -151,7 +152,8 @@ struct ClubListView: View {
                     }
                     scannedClub.strokesList.append(0)
                 }
-            } else {
+            }
+             else {
                 showAlert = true
             }
             
