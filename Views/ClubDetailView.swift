@@ -216,18 +216,19 @@ struct CancelTrackingButton_Previews: PreviewProvider {
 struct ClubCompareChartView: View {
     var club: Club
     var compareClub: Club?
+    
     var body: some View {
-        let yMinValue = min(club.strokesList.min()!, compareClub?.strokesList.min()! ?? club.strokesList.min()!)
-        let yMaxValue = max(club.strokesList.max()!, compareClub?.strokesList.max()! ?? club.strokesList.max()!)
-        Chart(Array(club.strokesList.enumerated()), id: \.offset) { nr, element in
+        let yMinValue = min(club.strokesList.min()!, compareClub?.strokesList.min() ?? club.strokesList.min()!)
+        let yMaxValue = max(club.strokesList.max()!, compareClub?.strokesList.max() ?? club.strokesList.max()!)
+        
+        return Chart(Array(club.strokesList.enumerated()), id: \.offset) { nr, element in
             PointMark(
                 x: .value("X value", nr),
                 y: .value("Y value", element)
             )
             
-            
-            if let cmpr = compareClub{
-                ForEach(Array(cmpr.strokesList.enumerated()), id: \.offset) {nr, element in
+            if let compareStrokesList = compareClub?.strokesList, !compareStrokesList.isEmpty {
+                ForEach(Array(compareStrokesList.enumerated()), id: \.offset) { nr, element in
                     PointMark(
                         x: .value("X value", nr),
                         y: .value("Y value", element)
@@ -237,6 +238,32 @@ struct ClubCompareChartView: View {
         }.chartYScale(domain: yMinValue - 10...yMaxValue + 10)
     }
 }
+
+
+//struct ClubCompareChartView: View {
+//    var club: Club
+//    var compareClub: Club?
+//    var body: some View {
+//        let yMinValue = min(club.strokesList.min()!, compareClub?.strokesList.min()! ?? club.strokesList.min()!)
+//        let yMaxValue = max(club.strokesList.max()!, compareClub?.strokesList.max()! ?? club.strokesList.max()!)
+//        Chart(Array(club.strokesList.enumerated()), id: \.offset) { nr, element in
+//            PointMark(
+//                x: .value("X value", nr),
+//                y: .value("Y value", element)
+//            )
+//            
+//            
+//            if let cmpr = compareClub{
+//                ForEach(Array(cmpr.strokesList.enumerated()), id: \.offset) {nr, element in
+//                    PointMark(
+//                        x: .value("X value", nr),
+//                        y: .value("Y value", element)
+//                    ).foregroundStyle(.blue)
+//                }
+//            }
+//        }.chartYScale(domain: yMinValue - 10...yMaxValue + 10)
+//    }
+//}
 
 struct ClubDetailBody: View {
     let club: Club
